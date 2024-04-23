@@ -1,0 +1,18 @@
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 このジョブは${{ github.event_name }}のイベントによって自動的にトリガーされました。"
+      - run: echo "🐧 このジョブはGitHubによってホストされているサーバーで動いてます。OSは${{ runner.os }}です。"
+      - run: echo "🔎 あなたがpushしたブランチの名前は ${{ github.ref }} です。それであなたがpushしたリポジトリの名前は ${{ github.repository }}です。"
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - run: echo "💡 リポジトリ ${{ github.repository }} はランナーによってクローンされた。"
+      - run: echo "🖥️ これで、ワークフローでランナー上でコードをテストする準備が整いました。"
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - run: echo "🍏 このジョブのステータスは「${{ job.status }}」です。"
