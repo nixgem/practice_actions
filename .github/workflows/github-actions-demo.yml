@@ -5,14 +5,14 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 The job このジョブは${{ github.event_name }}のイベントによって自動的にトリガーされました。"
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🎉 このジョブは${{ github.event_name }}のイベントによって自動的にトリガーされました。"
+      - run: echo "🐧 このジョブはGitHubによってホストされているサーバーで動いてます。OSは${{ runner.os }}です。"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out repository code
         uses: actions/checkout@v4
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+      - run: echo "💡 リポジトリ ${{ github.repository }} はランナーによってクローンされた。"
+      - run: echo "🖥️ これで、ワークフローでランナー上でコードをテストする準備が整いました。"
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - run: echo "🍏 このジョブのステータスは「${{ job.status }}」です。"
