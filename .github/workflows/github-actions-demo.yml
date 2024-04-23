@@ -7,7 +7,7 @@ jobs:
     steps:
       - run: echo "🎉 このジョブは${{ github.event_name }}のイベントによって自動的にトリガーされました。"
       - run: echo "🐧 このジョブはGitHubによってホストされているサーバーで動いてます。OSは${{ runner.os }}です。"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - run: echo "🔎 あなたがpushしたブランチの名前は ${{ github.ref }} です。それであなたがpushしたリポジトリの名前は ${{ github.repository }}です。"
       - name: Check out repository code
         uses: actions/checkout@v4
       - run: echo "💡 リポジトリ ${{ github.repository }} はランナーによってクローンされた。"
